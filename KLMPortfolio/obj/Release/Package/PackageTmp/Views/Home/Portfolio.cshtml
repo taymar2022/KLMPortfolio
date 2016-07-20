@@ -1,0 +1,230 @@
+﻿@{
+    ViewBag.Title = "Portfolio";
+}
+
+<div id="portfolio" class="bg-dark pt-120">
+    <div class="container">
+        <div class="scrolling-animation fade-up">
+            <h2 class="text-lg text-center">Impressive <span class="text-color">Portfolio</span></h2>
+            <hr class="hr-gray hr-center hr-sm hr-bold mb-20">
+            @*<p class="text-gray text-center mb-80">My Projects</p>*@
+        </div>
+
+
+
+        <div class="text-center">
+            <a class="btn btn-rect btn-xl btn-block" data-toggle="collapse"></a>
+            <a img="~/resources/images/javascriptand jquery.jpg"></a>
+            <h2>JavaScript Exercises</h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+           
+            <div>
+                <a class="btn btn-rect btn-xl btn-block" data-toggle="collapse"></a>
+                <a <script  href="~/resources/js/palindrome.js"></script>
+    <h2>Palindrome - click to see code</h2>
+    </a>
+            </div>
+            
+             <div class="container">
+                @*<a href=""><h2></h2></a>*@
+                 <a href="" data-toggle=modal data-target=<script src="~/resources/js/palindrome2.js"></script>"</a>
+                Word:  <input type="text" name="word"><br>
+                <button id="calcBtn">Calculate</button>
+                <div id="palResult"></div>
+            </div>
+            <div class="modal fade" id="max" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <pre class="brush: js text">
+                                <script type="text/javascript">
+        function IsPalindrome(word) {
+            $("#output1").val(word.split("").reverse().join(""));
+            if ($("#output1").val() == word)
+                $("#output2").val("Yes");
+            else
+                $("#output2").val("No");
+        }
+    </script>
+
+            @*function checkPalindrome(word) {
+            var l = word.length;
+            for (var i = 0; i < l / 2; i++) {
+            if (word.charAt(i) !== word.charAt(l - 1 - i)) {
+            return false;
+            }
+            }
+            return true;
+            }
+            if (checkPalindrome("1122332211")) {
+            document.write("The word is a palindrome");
+            }
+            else
+            {
+            document.write("The word is NOT a palindrome");
+            }
+            })*@
+    </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                
+            </div>
+
+            <div>
+                <a class="btn btn-rect btn-xl btn-block" data-toggle="collapse"></a>
+                <a <script  href="~/resources/js/minnumber.js"></script>
+    <h2>5 Numbers - click to see code</h2>
+    </a>
+            </div>
+
+            <div class="container">
+                <div class="row line visible-md visible-lg">
+                    <div class="col-md-3"><span class="spot"></span></div>
+                    <div class="col-md-3"><span class="spot"></span></div>
+                    <div class="col-md-3"><span class="spot"></span></div>
+                    <div class="col-md-3"><span class="spot"></span></div>
+                </div>
+
+                <a href="" data-toggle=modal data-target="js/maxnumber.js"></a>
+                @*<a href=""><h2></h2></a>*@
+                <h2> Greatest, least, product, sum, and mean of 5 numbers! </h2>
+
+                First number:  <input type="number" name="num1"><br>
+                Second number: <input type="number" name="num2"><br>
+                Third number:  <input type="number" name="num3"><br>
+                Fourth number: <input type="number" name="num4"><br>
+                Fifth number:  <input type="number" name="num5"><br>
+
+                <button id="numBtn">Calculate</button>
+                <div id="result"></div>
+                <div id="result1"></div>
+                <div id="result1"></div>
+                <div id="result3"></div>
+                <div id="result4"></div>
+
+            </div>
+
+            <div class="modal fade" id="max" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <pre class="brush: js text">
+                                        
+                                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a class="btn btn-rect btn-xl btn-block" data-toggle="collapse"></a>
+                <a <script  href="~/resources/js/factorial.js"></script>
+    <h2>Factorial - click to see code</h2>
+    </a>
+            </div>
+
+            <div class="container">
+                <a href="" data-toggle=modal data-target="js/factorial.js"></a>
+                @*<a href=""><h2></h2></a>*@
+                Number:  <input type="number" name="fact1"><br>
+                <button id="factBtn">Calculate</button>
+                <div id="factResult"></div>
+            </div>
+            <div class="container">
+                <div class="modal fade" id="max" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+
+                                <pre class="brush: js text">
+                                                $('#calcBtn').click(function()
+                                                function factorial()
+                                            {
+                                                    var num = $('input[name=num1]').val();
+                                                    var prod = 1;
+                                                    for (var i=1; i<=num;i++)
+                                                {
+                                                    prod = prod * i;
+                                                }
+                                                    $('#result2').text(prod + " is the factorial");
+                                            });
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <a class="btn btn-rect btn-xl btn-block" data-toggle="collapse"></a>
+                    <a <script  href="~/resources/js/fizzbuzz.js"></script>
+    <h2>Fizz Buzz - click to see code</h2>
+    </a>
+                </div>
+
+                <a href="" data-toggle="modal" data-target="js/fizzbuzz.js"></a>
+                @*<a href=""><h2></h2></a>*@
+                First number:  <input type="number" name="fb1"><br>
+                Second number: <input type="number" name="fb2"><br>
+
+                <button id="fbBtn">Calculate</button>
+                <div id="fbResult1"></div>
+            </div>
+            <div class="modal fade" id="max" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <pre class="brush: js text;">
+                                                $('#fbBtn').click(function()
+                                                function fizzbuzz()
+                                                    for (var i=1;i<=100;i++)
+                                                    var a = $('input[name=num1]').val();
+                                                    var b = $('input[name=num2]').val();
+                                                {
+                                                        if((a%b)===0 && (b%a)===0)
+                                                    {
+                                                            $('#fbResult').text("FizzBuzz");
+                                                    }
+                                                        else if((a%b)===0)
+                                                    {
+                                                            $('#fbResult').text("Fizz");
+                                                    }
+                                                        else if((b%a)===0)
+                                                    {
+                                                            $('#fbResult').text("Buzz");
+                                                    }
+                                                        else
+                                                    {
+                                                            $('#fbResult').text}(i);
+                                                    }
+        })
+               </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/resources/shCore.js"></script>
+<script src="~/resources/shBrushJScript.js"></script>
+<script src="~/resources/js/minnumber.js"></script>
+<script src="~/resources/js/factorial.js"></script>
+<script src="~/resources/js/fizzbuzz.js"></script>
+<script src="~/resources/js/palindrome.js"></script>
+
+
+
+
+

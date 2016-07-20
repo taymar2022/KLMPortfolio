@@ -1,0 +1,27 @@
+﻿<style type="text/css">
+    div.c1 {
+        background-image: url('assets/images/contact-bg.jpg');
+    }
+</style>
+<div>
+    @{ ViewBag.Title = "Contact"; }
+    <div id="contact" class="bg-image pt-160 pb-120 fixed-bg container row col-md-6 col-lg-5 col-md-offset-1 c1">
+        <h2 class="text-uppercase text-bold mb-40 scrolling-animation fade-up">Drop me a line</h2>
+        <form class="contact-form text-dark mb-120 scrolling-animation fade-up d1" action="~/resources/php/contact.php" method="post">
+            <div class="form-i-right"><input class="form-control input-rect input-solid-white mb-20 requiredField" type="text" name="name"></div>
+            <div class="form-i-right"><input class="form-control input-rect input-solid-white mb-20 requiredField" type="email" name="email"></div>
+            <div class="form-i-right">
+                <textarea class="mb-20 form-control input-rect input-solid-white requiredField" rows="5" name="message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-block btn-rect btn-3d">Send Message</button> <input type="hidden" name="submitted" id="submitted" value="true">
+            <p class="form-error empty-fields">Please fill the required fields</p>
+            <p class="form-error email-error">Email looks invalid</p>
+            <p class="form-success">Your message has been sent</p>
+        </form>
+        <h2 class="text-uppercase text-bold mb-20 scrolling-animation fade-up">Contact Information</h2>
+        <div class="scrolling-animation fade-up d1">
+            <address>Karen McKinney 1231 Shields Rd #5 Kernersville, NC 27284 (336) 231-8632</address>
+        </div>
+    </div>
+</div>
+
