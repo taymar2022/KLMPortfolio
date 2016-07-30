@@ -21,3 +21,21 @@ namespace KLMPortfolio
         }
     }
 }
+
+
+    public class RouteConfig
+{
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.MapRoute(
+            name: "NewSlug",
+            url: "BlogPosts/{slug}",
+            defaults: new { controller = "Blogposts", action = "Details", slug = UrlParameter.Optional }
+            );
+    }
+}
+
+
+
+
+

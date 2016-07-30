@@ -1,0 +1,71 @@
+﻿@model KLMPortfolio.Models.BlogPost
+@using Microsoft.AspNet.Identity;
+
+<div class="bg-light pt-160 pb-160">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-8">
+                <div>
+                    <ul class="BlogDetailsContent">
+                        <li>
+                            @Html.DisplayFor(model => model.Title)
+                        </li>
+                        <li>
+                            @Html.DisplayFor(model => model.Created)
+                        </li>
+                        <li>
+                            @Html.Raw(Server.HtmlDecode(Model.Body))
+                        </li>
+                        <li>
+                            @Html.DisplayFor(model => model.MediaUrl)
+                        </li>
+                    </ul>
+                </div>
+
+              
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+            </div>
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+            
+            @using (Html.BeginForm("Create", "Comments", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="PostId" value="@Model.Id" />
+                <input type="hidden" name="AuthorId" value="@User.Identity.GetUserId()" />
+                <textarea class="form-control" name="Body" id="Body">
+                    @*This is my textarea to be replaced with CKEditor.*@
+                </textarea>
+                <div class="form-group"> 
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                 </div>
+            }
+
+            @foreach (var comment in Model.Comments)
+            {
+                <ul class="BlogDetailsContent">
+                    <li>
+                        @Html.DisplayFor(modelItem => comment.Created)
+                    </li>
+                    <li>
+                        >@Html.Raw(Server.HtmlDecode(comment.Body))
+                    </li>
+                </ul>
+            }
+
+        </div>
+    </div>
+</div>
+            
+
+@section scripts{
+    <script src="~/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('Body');
+    </script>
+}

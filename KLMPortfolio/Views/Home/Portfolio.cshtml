@@ -6,112 +6,306 @@
             @*<p class="text-gray text-center mb-80">My Projects</p>*@
         </div>
 
+        
+        <a href="" data-toggle="modal" data-target="#jsexercises">Javascript Exercises</a>
+        <div id="jsexercises" class="modal fade">
+
+            <span class="close-modal" data-dismiss="modal">&times;</span>
+
+            <div class="modal-dialog">
+
+                <div class="modal-content text-center">
+
+                    <div id="jsexercises">
+                        <div class="text-center">
+                            <a class="btn btn-rect btn-xl btn-block" data-toggle="collapse">
+                                <img src="~/resources/images/javascriptand jquery.jpg" />
+                            </a>
+                            <h2>JavaScript Exercises</h2>
+                        </div>
+                    </div>
+                </div>
+                <a href="#jsexercises" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Javascript Exercises<i class="fa fa-arrow-down fa-lg"></i></a>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+@*<a href="" data-toggle="modal" data-target="#desktop-modal">Test Modals</a>
+<div id="desktop-modal" class="modal fade">
+
+    <span class="close-modal" data-dismiss="modal">&times;</span>
+
+    <div class="modal-dialog">
+
+        <div class="modal-content text-center">
+
+            <h2 class="mb-10">Desktop devices</h2>
+            <h4 class="mb-40">Full Experience</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vestibulum vehicula condimentum. Praesent iaculis mauris dolor, eu eleifend orci mollis quis. Aenean aliquam velit nec interdum ullamcorper. Vestibulum eget urna vel ipsum sodales porttitor et nec libero.</p>
+
+            <a href="#portfolio" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">View Porftolio<i class="fa fa-arrow-down fa-lg"></i></a>
+
+        </div>
+
+    </div>
+
+</div>*@
+
+@*palindrome*@
+
+<a href="" data-toggle="modal" data-target="#palResult">Palindrome - View Code</a>
+<div id="palResult" class="modal fade">
+
+    <span class="close-modal" data-dismiss="modal">&times;</span>
+
+    <div class="modal-dialog">
+
+        <div class="modal-content text-center">
+            $('#calcBtn').click(function () {
+            var word = $("#palInput").val();
+            var reverse = word.split("").reverse().join("");
+            if (word == reverse)
+            $("#palResult").html("Yes");
+            else
+            $("#palResult").html("No");
+            });
+            <a href="#palResult" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Palindrome - View Code<i class="fa fa-arrow-down fa-lg"></i></a>
+
+        </div>
+
+    </div>
+
+</div>
+
+@*palindrome*@
+
+@*Five numbers*@
+
+    <a href="" data-toggle="modal" data-target="#numBtn">5 Numbers - View Code</a>
+    <div id="numBtn" class="modal fade">
+
+        <span class="close-modal" data-dismiss="modal">&times;</span>
+
+        <div class="modal-dialog">
+
+            <div class="modal-content text-center">
+                $('#calcBtn').click(function(){
+
+
+                var a = parseInt($('input[name=num1]').val());
+                var b = parseInt($('input[name=num2]').val());
+                var c = parseInt($('input[name=num3]').val());
+                var d = parseInt($('input[name=num4]').val());
+                var e = parseInt($('input[name=num5]').val());
+
+                if (a > b && a > c && a > d && a > e) {
+                $('#result').text(a + " is the greatest number");
+                }
+                else if (b > a & b > c && b > d && b > e) {
+                $('#result').text(b + " is the greatest number");
+                }
+                else if  (c > a && c > b && c > d && c > e) {
+                $('#result').text(c + " is the greatest number");
+                }
+                else if (d > a && d > b && d > c && d > e) {
+                $ ('#result').text(d + " is the greatest number");
+                }
+                else if (e > a && e > b && e > c && e > d) {
+                $('#result').text(e + " is the greatest number");
+                }
+
+                if (a < b && a < c && a < d && a < e) {
+                $('#result').text(a + " is the least number");
+                }
+                else if (b < a & b < c && b < d && b < e) {
+                $('#result').text(b + " is the least number");
+                }
+                else if  (c < a && c < b && c < d && c < e) {
+                $('#result').text(c + " is the least number");
+                }
+                else if (d < a && d < b && d < c && d < e) {
+                $ ('#result').text(d + " is the least number");
+                }
+                else if (e < a && e < b && e < c && e < d) {
+                $('#result').text(e + " is the least number");
+                }
+
+
+
+                var prod = a*b*c*d*e;
+                $('#result').append(prod + " is the product");
+
+                var sum = a+b+c+d+e;
+                $('#result').append(sum + " is the sum");
+
+                var mean =(sum/5);
+                $('#result').append(mean + " is the mean");
+
+                });
+                <a href="#numBtn" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">5 Numbers- View Code<i class="fa fa-arrow-down fa-lg"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    @*Five numbers*@
+
+
+@*Factorial*@
+
+            <a href="" data-toggle="modal" data-target="#calcBtn">Factorial - View Code</a>
+        <div id="calcBtn" class="modal fade">
+
+            <span class="close-modal" data-dismiss="modal">&times;</span>
+
+            <div class="modal-dialog">
+
+                <div class="modal-content text-center">
+                    $('#calcBtn').click(function()
+                    function factorial()
+                    {
+                    var num = $('input[name=num1]').val();
+                    var prod = 1;
+                    for (var i=1; i<=num;i++)
+                    {
+                    prod = prod * i;
+                    }
+                    $('#result2').text(prod + " is the factorial");
+                    });
+                   <a href="#calcBtn" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Factorial - View Code<i class="fa fa-arrow-down fa-lg"></i></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        @*Factorial*@
+
+        @*Fizz Buzz*@
+
+        <a href="" data-toggle="modal" data-target="#fbBtn">Fizz Buzz - View Code</a>
+    <div id="fbBtn" class="modal fade">
+
+        <span class="close-modal" data-dismiss="modal">&times;</span>
+
+        <div class="modal-dialog">
+
+            <div class="modal-content text-center">
+                $('#fbBtn').click(function()
+                function fizzbuzz()
+                for (var i=1;i<=100;i++)
+                var a = $('input[name=num1]').val();
+                var b = $('input[name=num2]').val();
+                {
+                if((a%b)===0 && (b%a)===0)
+                {
+                $('#fbResult').text("FizzBuzz");
+                }
+                else if((a%b)===0)
+                {
+                $('#fbResult').text("Fizz");
+                }
+                else if((b%a)===0)
+                {
+                $('#fbResult').text("Buzz");
+                }
+                else
+                {
+                $('#fbResult').text}(i);
+                }
+                })     
+                
+       <a href="#fbBtn" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Fizz Buzz - View Code<i class="fa fa-arrow-down fa-lg"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+        @*Fizz Buzz*@
+
+
+<div class="container">
+    <div class="row">
         <div class="text-center">
-            <a class="btn btn-rect btn-xl btn-block" data-toggle="collapse">
-                <img src="~/resources/images/javascriptand jquery.jpg" />
+            <a class="btn btn-rect btn-xl btn-block" data-toggle="modal" data-target="#palResult">
+                <img src="~/resources/images/palindromeimg.jpg" />
+                <h5>Palindrome</h5>
             </a>
-            <h2>JavaScript Exercises</h2>
+        </div>
+        <div class="col-xs-12">
+            Word: <input type="text" id="palInput"><br>
+            <button id="calcBtn">Calculate</button>
+            <div id="palResult"></div>
         </div>
     </div>
 </div>
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10">
-                <a class="btn btn-rect btn-xl btn-block" data-toggle="modal" data-target="#myModal">
-                    <h2>Palindrome - click to see code</h2>
-                </a>
-            </div>
-            <div class="col-md-2">
-                Word: <input type="text" id="palInput"><br>
-                <button id="calcBtn">Calculate</button>
-                <div id="palResult"></div>
-            </div>
-        </div>
-    </div>
+<!-- Modal -->
 
-    <!-- Modal -->
+<div id="palResult" class="modal fade">
 
-    <a href="" data-toggle="modal" data-target="#palResult"></a>
+    <span class="close-modal" data-dismiss="modal">&times;</span>
 
-    <div class="modal fade" id="palResult" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"
-                            aria-hidden="true">
-                        <pre>
-                        $('#calcBtn').click(function () {
-                        var word = $("#palInput").val();
-                        var reverse = word.split("").reverse().join("");
-                        if (word == reverse)
-                        $("#palResult").html("Yes");
-                        else
-                        $("#palResult").html("No");
-                        });
-                        </pre>
-                    </button>
-                    <h1 class="modal-title" id="myModalLabel">Palindrome - click to see code</h1>
-                </div>
-                <div class="modal-body col-sm-12">
-                </div>
-                <div class="modal-footer no-margin">
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="modal-dialog">
+
+        <div class="modal-content text-center">
 
 
 
 
 
 
-    @* <div id="myModal" class="modal fade" role="dialog">*@
-    @* <div class="modal-dialog">*@
-    <!-- Modal content-->
-    @*<div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the modal.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-             </div>
-        </div>*@
 
 
-    @*<div class="modal fade" id="palResult" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header"></div>
-                            <div class="modal-body col-xs-12">
-                                <pre class="brush: js text">
-        $('#calcBtn').click(function () {
+            $('#calcBtn').click(function () {
             var word = $("#palInput").val();
             var reverse = word.split("").reverse().join("");
             if (word == reverse)
-                $("#palResult").html("Yes");
+            $("#palResult").html("Yes");
             else
-                $("#palResult").html("No");
-        });
+            $("#palResult").html("No");
+            });
 
-                                    </pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>*@
-</section>
+            @*<h2 class="mb-10">Desktop devices</h2>
+                <h4 class="mb-40">Full Experience</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vestibulum vehicula condimentum. Praesent iaculis mauris dolor, eu eleifend orci mollis quis. Aenean aliquam velit nec interdum ullamcorper. Vestibulum eget urna vel ipsum sodales porttitor et nec libero.</p>*@
+
+            <a href="#palresult" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">View Code<i class="fa fa-arrow-down fa-lg"></i></a>
+            @*<pre>
+                $('#calcBtn').click(function () {
+                var word = $("#palInput").val();
+                var reverse = word.split("").reverse().join("");
+                if (word == reverse)
+                $("#palResult").html("Yes");
+                else
+                $("#palResult").html("No");
+                });
+                </pre>*@
+        </div>
+
+    </div>
+
+</div>
+
+
+
 <div>
     <a class="btn btn-rect btn-xl btn-block" data-toggle="collapse"
                 <script  href="~/resources/js/minnumber.js"></script>
-    <h2>5 Numbers - click to see code</h2>
+        <img src="~/resources/images/mathjs.png" />
+    <h5>5 Numbers - click to see code</h5>
     </a>
 </div>
 
@@ -152,10 +346,13 @@
         </div>
     </div>
 </div>
+
+
 <div>
     <a class="btn btn-rect btn-xl btn-block" data-toggle="collapse">
         <script href="~/resources/js/factorial.js"></script>
-        <h2>Factorial - click to see code</h2>
+        <img src="~/resources/images/factorialimg.png" />
+        <h5>Factorial - click to see code</h5>
     </a>
 </div>
 
@@ -192,7 +389,8 @@
     <div>
         <a class="btn btn-rect btn-xl btn-block" data-toggle="collapse">
             <script href="~/resources/js/fizzbuzz.js"></script>
-            <h2>Fizz Buzz - click to see code</h2>
+            <img src="~/resources/images/fizzbuzzimg.png" />
+            <h5>Fizz Buzz - click to see code</h5>
         </a>
     </div>
 
@@ -238,13 +436,14 @@
     </div>
 </div>
 
-<script src="~/resources/shCore.js"></script>
-<script src="~/resources/shBrushJScript.js"></script>
-<script src="~/resources/js/minnumber.js"></script>
-<script src="~/resources/js/factorial.js"></script>
-<script src="~/resources/js/fizzbuzz.js"></script>
-<script src="~/resources/js/palindrome.js"></script>
-
+@section scripts{
+    <script src="~/resources/shCore.js"></script>
+    <script src="~/resources/shBrushJScript.js"></script>
+    <script src="~/resources/js/minnumber.js"></script>
+    <script src="~/resources/js/factorial.js"></script>
+    <script src="~/resources/js/fizzbuzz.js"></script>
+    <script src="~/resources/js/palindrome.js"></script>
+}
 
 
 

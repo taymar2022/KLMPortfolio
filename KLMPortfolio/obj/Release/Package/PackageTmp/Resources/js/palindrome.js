@@ -1,19 +1,8 @@
-
-$('#calcBtn').click(function(){
-
-    function checkPalindrome(word) {    
-        var l = word.length;
-        for (var i = 0; i < l / 2; i++) {
-            if (word.charAt(i) !== word.charAt(l - 1 - i)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    if (checkPalindrome("1122332211")) {
-        document.write("The word is a palindrome");
-    } else {
-        document.write("The word is NOT a palindrome");
-    }
-})
+$('#calcBtn').click(function () {
+    var word = $("#palInput").val();
+    var reverse = word.split("").reverse().join("");
+    if (word == reverse)
+        $("#palResult").html("Yes");
+    else
+        $("#palResult").html("No");
+});

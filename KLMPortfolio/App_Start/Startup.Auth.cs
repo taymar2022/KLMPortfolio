@@ -4,10 +4,12 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
+using Owin.Security.Providers.LinkedIn;
 using Owin;
 using KLMPortfolio.Models;
 
 namespace KLMPortfolio
+    
 {
     public partial class Startup
     {
@@ -54,15 +56,20 @@ namespace KLMPortfolio
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseLinkedInAuthentication(
+               "78b9jln71fj1uq",
+               "SN0MhD5RPq6biyal");
+
+            app.UseFacebookAuthentication(
+               appId: "173625969722033",
+               appSecret: "a7dfcc326c7ad5bc7adf0641e4fc2874");
+
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "900078031450-muhv5v0maul3ulpd1domen4upndgco8a.apps.googleusercontent.com",
+                ClientSecret = "LeCd1S9yr9SrUisZNhAlRovU"
+            });
         }
     }
 }

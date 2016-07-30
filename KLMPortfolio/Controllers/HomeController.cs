@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace KLMPortfolio.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -40,6 +41,5 @@ namespace KLMPortfolio.Controllers
 
             return View();
         }
-
     }
 }

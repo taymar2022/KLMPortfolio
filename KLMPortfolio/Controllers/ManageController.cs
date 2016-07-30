@@ -10,6 +10,7 @@ using KLMPortfolio.Models;
 
 namespace KLMPortfolio.Controllers
 {
+    //[RequireHttps]
     [Authorize]
     public class ManageController : Controller
     {

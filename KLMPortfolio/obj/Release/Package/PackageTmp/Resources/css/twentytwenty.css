@@ -156,3 +156,19 @@
   border-top: 6px solid white;
   bottom: 50%;
   margin-bottom: -17px; }
+
+#service-logos {
+    text-align:center;
+}
+
+#service-logos img {
+    max-width: 200px;
+}
+.col-md-6 bg-image {
+    max-height: 300px
+    
+}
+.col-md-6 bg-image {
+    max-width: 200px
+    
+}
