@@ -1,6 +1,10 @@
 
 $('#numBtn').click(function () {
-
+    $("#result").html('');
+    $("#result1").html('');
+    $("#result2").html('');
+    $("#result3").html('');
+    $("#result4").html('');
 
     var a = parseInt($('input[name=num1]').val());
     var b = parseInt($('input[name=num2]').val());

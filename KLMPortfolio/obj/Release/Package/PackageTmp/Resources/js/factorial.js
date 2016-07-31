@@ -1,14 +1,14 @@
 
 $('#factBtn').click(function(){
-
+    $("#factResult").html('');
    
     var num = parseInt($('input[name=fact1]').val());
-var prod = 1;
-for (var i=1; i<=num;i++)
-{ 
-prod = prod * i;
-}
-$('#factResult').append(prod + " is the factorial");
+    var prod = 1;
+    for (var i=1; i<=num;i++)
+    { 
+        prod = prod * i;
+    }
+    $('#factResult').append(prod + " is the factorial");
 
 });
 

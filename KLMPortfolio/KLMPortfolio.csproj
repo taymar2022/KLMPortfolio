@@ -415,10 +415,14 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BlogTemplate\css\blog-post.css" />
+    <Content Include="BlogTemplate\css\blog-post.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="BlogTemplate\css\bootstrap.css" />
     <Content Include="BlogTemplate\css\bootstrap.min.css" />
-    <Content Include="BlogTemplate\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="BlogTemplate\fonts\glyphicons-halflings-regular.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="BlogTemplate\index.html" />
     <Content Include="BlogTemplate\js\bootstrap.js" />
     <Content Include="BlogTemplate\js\bootstrap.min.js" />
@@ -431,12 +435,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\fontawesome-webfont.svg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fonts\glyphicons-halflings-regular.svg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="index.html" />
@@ -470,15 +468,21 @@
     <Content Include="resources\images\photo %2856%29.PNG" />
     <Content Include="resources\images\piggy-money.jpg" />
     <Content Include="resources\css\bootstrap.css" />
-    <Content Include="resources\css\bootstrap.min.css" />
-    <Content Include="resources\css\font-awesome.css" />
+    <Content Include="resources\css\bootstrap.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\css\font-awesome.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="resources\css\font-awesome.min.css" />
     <Content Include="resources\css\perfectr-color-1.css" />
     <Content Include="resources\css\perfectr-color-2.css" />
     <Content Include="resources\css\perfectr-color-3.css" />
     <Content Include="resources\css\perfectr-color-4.css" />
     <Content Include="resources\css\perfectr-color-5.css" />
-    <Content Include="resources\css\perfectr-color-6.css" />
+    <Content Include="resources\css\perfectr-color-6.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="resources\css\perfectr-color-7.css" />
     <Content Include="resources\css\perfectr-color-8.css" />
     <Content Include="resources\css\_perfectr.css" />
@@ -610,25 +614,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="resources\css\custom-color.less" />
-    <Content Include="fonts\FontAwesome.otf">
+    <Content Include="BlogTemplate\fonts\glyphicons-halflings-regular.eot">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fonts\fontawesome-webfont.eot">
+    <Content Include="BlogTemplate\fonts\glyphicons-halflings-regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fonts\fontawesome-webfont.ttf">
+    <Content Include="BlogTemplate\fonts\glyphicons-halflings-regular.woff">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fonts\fontawesome-webfont.woff">
+    <Content Include="BlogTemplate\fonts\glyphicons-halflings-regular.woff2">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fonts\fontawesome-webfont.woff2">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BlogTemplate\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="BlogTemplate\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="BlogTemplate\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="BlogTemplate\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\KMcKinneyPortfolio %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\KMcKinneyPortfolio.pubxml" />
     <Content Include="resources\fonts\fontawesome-webfont.eot">
@@ -738,15 +735,6 @@
     <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fonts\glyphicons-halflings-regular.eot">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="packages.config" />
     <Content Include="resources\jquery-1.10.2.min.map" />
   </ItemGroup>
