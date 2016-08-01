@@ -721,6 +721,7 @@
     <Content Include="Views\Shared\_ViewStart.cshtml" />
     <Content Include="Views\BlogPosts\MyIndex.cshtml" />
     <Content Include="Views\BlogPosts\BlogDetails.cshtml" />
+    <Content Include="Views\Shared\_Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="adapters\" />

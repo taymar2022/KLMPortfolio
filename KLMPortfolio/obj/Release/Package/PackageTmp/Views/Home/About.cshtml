@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "About";
 }
+
 <div id="about" class="bg-black">
 
     <div class="container-fluid">
@@ -26,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 bg-image col-full-height hidden-sm hidden-xs" 
+            <div class="col-md-6 bg-image col-full-height hidden-sm hidden-xs"
                  style="background-image: url(); background-image: url('../../resources/images/photo (54).PNG'); ">
             </div>
         </div>
@@ -35,10 +36,18 @@
 
 
 
-<div class="text-center">
-    <a href="~/resources/resume.pdf" class="btn btn-rect btn-xl btn-block" data-toggle="collapse">
+@*<div class="text-center">
+
+    <a href="~/resume.pdf" class="btn btn-rect btn-xl btn-block" data-toggle="collapse">
         Long Answer<br>
         <span class="btn-subtext">Check my full Resume</span>
     </a>
+</div>*@
+
+<div class="text-center">
+    Long Answer<br />
+    <a href="~/resume.pdf">Check my full resume</a>
+    <span class="btn-subtext">@*Check my full Resume*@</span>
+    
 </div>
 

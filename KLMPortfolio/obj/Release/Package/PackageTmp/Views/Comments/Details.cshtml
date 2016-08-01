@@ -10,60 +10,31 @@
         <h4>Comment</h4>
         <hr />
         <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Author.FirstName)
-            </dt>
+            <dt>@Html.DisplayNameFor(model => model.Author.FirstName)</dt>
+            <dd>@Html.DisplayFor(model => model.Author.FirstName)</dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.Author.FirstName)
-            </dd>
+            <dt>@Html.DisplayNameFor(model => model.Post.Title)</dt>
+            <dd>@Html.DisplayFor(model => model.Post.Title)</dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Post.Title)
-            </dt>
+            <dt>@Html.DisplayNameFor(model => model.Body)</dt>
+            <dd>@Html.DisplayFor(model => model.Body)</dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.Post.Title)
-            </dd>
+            <dt>@Html.DisplayNameFor(model => model.Created)</dt>
+            <dd>@Html.DisplayFor(model => model.Created)</dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Body)
-            </dt>
+            <dt>@Html.DisplayNameFor(model => model.Updated)</dt>
+            <dd>@Html.DisplayFor(model => model.Updated)</dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.Body)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Created)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Created)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Updated)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Updated)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.UpdateReason)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.UpdateReason)
-            </dd>
-
+            <dt>@Html.DisplayNameFor(model => model.UpdateReason)</dt>
+            <dd>@Html.DisplayFor(model => model.UpdateReason)</dd>
         </dl>
     </div>
-    </div>
+</div>
     <p>
 
         @Html.ActionLink("Back to List", "Index")
+
+
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
         @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
         @Html.ActionLink("Delete", "Delete", new { id = Model.Id })

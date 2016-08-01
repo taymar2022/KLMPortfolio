@@ -1,7 +1,7 @@
 ﻿<div id="portfolio" class="bg-dark pt-120">
     <div class="container">
         <div class="scrolling-animation fade-up">
-            <h2 class="text-lg text-center">Impressive <span class="text-color">Portfolio</span></h2>
+            <h2 class="text-lg text-center">My <span class="text-color">Portfolio</span></h2>
             <hr class="hr-gray hr-center hr-sm hr-bold mb-20">
             @*<p class="text-gray text-center mb-80">My Projects</p>*@
         </div>
@@ -26,140 +26,13 @@
     </div>
 </div>
 
-<a href="" data-toggle="modal" data-target="#palCode">Palindrome - View Code</a>
-<div id="palCode" class="modal fade">
-    <span class="close-modal" data-dismiss="modal">&times;</span>
-    <div class="modal-dialog">
-        <div class="modal-content text-center">
-            $('#calcBtn').click(function () {
-            var word = $("#palInput").val();
-            var reverse = word.split("").reverse().join("");
-            if (word == reverse)
-            $("#palResult").html("Yes");
-            else
-            $("#palResult").html("No");
-            });
-            <a href="#palCode" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Palindrome - View Code<i class="fa fa-arrow-down fa-lg"></i></a>
-        </div>
-    </div>
-</div>
 
 @*palindrome*@
 @*Five numbers*@
-<a href="" data-toggle="modal" data-target="#numberCode">5 Numbers - View Code</a>
-<div id="numberCode" class="modal fade">
-    <span class="close-modal" data-dismiss="modal">&times;</span>
-    <div class="modal-dialog">
-        <div class="modal-content text-center">
-            $('#calcBtn').click(function(){
-            var a = parseInt($('input[name=num1]').val());
-            var b = parseInt($('input[name=num2]').val());
-            var c = parseInt($('input[name=num3]').val());
-            var d = parseInt($('input[name=num4]').val());
-            var e = parseInt($('input[name=num5]').val());
-
-            if (a > b && a > c && a > d && a > e) {
-            $('#result').text(a + " is the greatest number");
-            }
-            else if (b > a & b > c && b > d && b > e) {
-            $('#result').text(b + " is the greatest number");
-            }
-            else if  (c > a && c > b && c > d && c > e) {
-            $('#result').text(c + " is the greatest number");
-            }
-            else if (d > a && d > b && d > c && d > e) {
-            $ ('#result').text(d + " is the greatest number");
-            }
-            else if (e > a && e > b && e > c && e > d) {
-            $('#result').text(e + " is the greatest number");
-            }
-
-            if (a < b && a < c && a < d && a < e) {
-            $('#result').text(a + " is the least number");
-            }
-            else if (b < a & b < c && b < d && b < e) {
-            $('#result').text(b + " is the least number");
-            }
-            else if  (c < a && c < b && c < d && c < e) {
-            $('#result').text(c + " is the least number");
-            }
-            else if (d < a && d < b && d < c && d < e) {
-            $ ('#result').text(d + " is the least number");
-            }
-            else if (e < a && e < b && e < c && e < d) {
-            $('#result').text(e + " is the least number");
-            }
-
-            var prod = a*b*c*d*e;
-            $('#result').append(prod + " is the product");
-
-            var sum = a+b+c+d+e;
-            $('#result').append(sum + " is the sum");
-
-            var mean =(sum/5);
-            $('#result').append(mean + " is the mean");
-
-            });
-            <a href="" data-toggle="modal" data-target="#numberCode">5 Numbers- View Code<i class="fa fa-arrow-down fa-lg"></i></a>
-        </div>
-    </div>
-</div>
 @*Five numbers*@
 @*Factorial*@
-<a href="" data-toggle="modal" data-target="#factCode">Factorial - View Code</a>
-<div id="factCode" class="modal fade">
-    <span class="close-modal" data-dismiss="modal">&times;</span>
-    <div class="modal-dialog">
-        <div class="modal-content text-center">
-            $('#calcBtn').click(function()
-            function factorial()
-            {
-            var num = $('input[name=num1]').val();
-            var prod = 1;
-            for (var i=1; i<=num;i++)
-            {
-            prod = prod * i;
-            }
-            $('#result2').text(prod + " is the factorial");
-            });
-            <a href="#calcBtn" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Factorial - View Code<i class="fa fa-arrow-down fa-lg"></i></a>
-        </div>
-    </div>
-</div>
 @*Factorial*@
 @*Fizz Buzz*@
-<a href="" data-toggle="modal" data-target="#fbCode">Fizz Buzz - View Code</a>
-<div id="fbCode" class="modal fade">
-    <span class="close-modal" data-dismiss="modal">&times;</span>
-    <div class="modal-dialog">
-        <div class="modal-content text-center">
-            $('#fbBtn').click(function()
-            function fizzbuzz()
-            for (var i=1;i<=100;i++)
-            var a = $('input[name=num1]').val();
-            var b = $('input[name=num2]').val();
-            {
-            if((a%b)===0 && (b%a)===0)
-            {
-            $('#fbResult').text("FizzBuzz");
-            }
-            else if((a%b)===0)
-            {
-            $('#fbResult').text("Fizz");
-            }
-            else if((b%a)===0)
-            {
-            $('#fbResult').text("Buzz");
-            }
-            else
-            {
-            $('#fbResult').text}(i);
-            }
-            })
-            <a href="#fbCode" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Fizz Buzz - View Code<i class="fa fa-arrow-down fa-lg"></i></a>
-        </div>
-    </div>
-</div>
 @*Fizz Buzz*@
 
 <div class="container">
@@ -167,8 +40,26 @@
         <div class="text-center">
             <a class="btn btn-rect btn-xl btn-block" data-toggle="modal" data-target="#palCode">
                 <img src="~/resources/images/palindromeimg.jpg" />
-                <h5>Palindrome</h5>
+                <h5>Palindrome - View code</h5>
             </a>
+            <a href="" data-toggle="modal" data-target="#palCode"></a>
+            <div id="palCode" class="modal fade">
+                <span class="close-modal" data-dismiss="modal">&times;</span>
+                <div class="modal-dialog">
+                    <div class="modal-content text-center">
+                        $('#palBtn').click(function () {
+                        var word = $("#palInput").val();
+                        var reverse = word.split("").reverse().join("");
+                        if (word == reverse)
+                        $("#palResult").html("Yes");
+                        else
+                        $("#palResult").html("No");
+                        });
+                        <a href="#palCode" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Palindrome - View Code<i class="fa fa-arrow-down fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="col-xs-12">
             Word: <input type="text" id="palInput" required>
@@ -181,8 +72,67 @@
 <div>
     <a class="btn btn-rect btn-xl btn-block" href="" data-toggle="modal" data-target="#numberCode">
         <img src="~/resources/images/mathjs.png" />
-        <h5>5 Numbers - click to see code</h5>
+        <h5>5 Numbers - View Code</h5>
     </a>
+
+    <a href="" data-toggle="modal" data-target="#numberCode"></a>
+    <div id="numberCode" class="modal fade">
+        <span class="close-modal" data-dismiss="modal">&times;</span>
+        <div class="modal-dialog">
+            <div class="modal-content text-center">
+                $('#numBtn').click(function(){
+                var a = parseInt($('input[name=num1]').val());
+                var b = parseInt($('input[name=num2]').val());
+                var c = parseInt($('input[name=num3]').val());
+                var d = parseInt($('input[name=num4]').val());
+                var e = parseInt($('input[name=num5]').val());
+
+                if (a > b && a > c && a > d && a > e) {
+                $('#result').text(a + " is the greatest number");
+                }
+                else if (b > a & b > c && b > d && b > e) {
+                $('#result').text(b + " is the greatest number");
+                }
+                else if  (c > a && c > b && c > d && c > e) {
+                $('#result').text(c + " is the greatest number");
+                }
+                else if (d > a && d > b && d > c && d > e) {
+                $ ('#result').text(d + " is the greatest number");
+                }
+                else if (e > a && e > b && e > c && e > d) {
+                $('#result').text(e + " is the greatest number");
+                }
+
+                if (a < b && a < c && a < d && a < e) {
+                $('#result').text(a + " is the least number");
+                }
+                else if (b < a & b < c && b < d && b < e) {
+                $('#result').text(b + " is the least number");
+                }
+                else if  (c < a && c < b && c < d && c < e) {
+                $('#result').text(c + " is the least number");
+                }
+                else if (d < a && d < b && d < c && d < e) {
+                $ ('#result').text(d + " is the least number");
+                }
+                else if (e < a && e < b && e < c && e < d) {
+                $('#result').text(e + " is the least number");
+                }
+
+                var prod = a*b*c*d*e;
+                $('#result').append(prod + " is the product");
+
+                var sum = a+b+c+d+e;
+                $('#result').append(sum + " is the sum");
+
+                var mean =(sum/5);
+                $('#result').append(mean + " is the mean");
+
+                });
+                <a href="" data-toggle="modal" data-target="#numberCode"><i class="fa fa-arrow-down fa-lg"></i></a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container">
@@ -193,6 +143,26 @@
         <div class="col-md-3"><span class="spot"></span></div>
     </div>
 
+    <a href="" data-toggle="modal" data-target="#factCode"></a>
+    <div id="factCode" class="modal fade">
+        <span class="close-modal" data-dismiss="modal">&times;</span>
+        <div class="modal-dialog">
+            <div class="modal-content text-center">
+                $('#factBtn').click(function()
+                function factorial()
+                {
+                var num = $('input[name=num1]').val();
+                var prod = 1;
+                for (var i=1; i<=num;i++)
+                {
+                prod = prod * i;
+                }
+                $('#result2').text(prod + " is the factorial");
+                });
+                <a href="#calcBtn" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Factorial - View Code<i class="fa fa-arrow-down fa-lg"></i></a>
+            </div>
+        </div>
+    </div>
     <h2> Greatest, least, product, sum, and mean of 5 numbers! </h2>
 
     First number:  <input type="number" name="num1"><br>
@@ -223,7 +193,7 @@
 <div>
     <a class="btn btn-rect btn-xl btn-block" href="" data-toggle="modal" data-target="#factCode">
         <img src="~/resources/images/factorialimg.png" />
-        <h5>Factorial - click to see code</h5>
+        <h5>Factorial - View Code</h5>
     </a>
 </div>
 
@@ -239,7 +209,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <pre class="brush: js text">
-                    $('#calcBtn').click(function()
+                    $'(#fbBtn').click(function()
                     function factorial()
                     {
                         var num = $('input[name=num1]').val();
@@ -261,6 +231,39 @@
             <img src="~/resources/images/fizzbuzzimg.png" />
             <h5>Fizz Buzz - click to see code</h5>
         </a>
+
+        <a href="" data-toggle="modal" data-target="#fbCode">Fizz Buzz - View Code</a>
+        <div id="fbCode" class="modal fade">
+            <span class="close-modal" data-dismiss="modal">&times;</span>
+            <div class="modal-dialog">
+                <div class="modal-content text-center">
+                    $('#fbBtn').click(function()
+                    function fizzbuzz()
+                    for (var i=1;i<=100;i++)
+                    var a = $('input[name=num1]').val();
+                    var b = $('input[name=num2]').val();
+                    {
+                    if((a%b)===0 && (b%a)===0)
+                    {
+                    $('#fbResult').text("FizzBuzz");
+                    }
+                    else if((a%b)===0)
+                    {
+                    $('#fbResult').text("Fizz");
+                    }
+                    else if((b%a)===0)
+                    {
+                    $('#fbResult').text("Buzz");
+                    }
+                    else
+                    {
+                    $('#fbResult').text}(i);
+                    }
+                    })
+                    <a href="#fbCode" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Fizz Buzz - View Code<i class="fa fa-arrow-down fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
 
         <a href="" data-toggle="modal" data-target="js/fizzbuzz.js"></a>

@@ -6,26 +6,21 @@
         <div class="row">
             <div class="col-xs-8">
                 <div>
-                    <ul class="BlogDetailsContent">
-                        <li>
-                            @Html.DisplayFor(model => model.Title)
-                        </li>
-                        <li>
-                            @Html.DisplayFor(model => model.Created)
-                        </li>
-                        <li>
-                            @Html.Raw(Server.HtmlDecode(Model.Body))
-                        </li>
-                        <li>
-                            @Html.DisplayFor(model => model.MediaUrl)
-                        </li>
+                    <ul class="DetailsContent">
+                        <li>@Html.DisplayFor(model => model.Title)</li>
+                        <li>@Html.DisplayFor(model => model.Created)</li>
+                        <li>@Html.Raw(Server.HtmlDecode(Model.Body))</li>
+                        <li>@Html.DisplayFor(model => model.MediaUrl)</li>
                     </ul>
                 </div>
-
-              
+                @if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+                {
+              <p>
                 @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+             </p>
+                }
             </div>
             <div>
                 @Html.ActionLink("Back to List", "Index")
@@ -49,15 +44,17 @@
             @foreach (var comment in Model.Comments)
             {
                 <ul class="Content">
-                    <li>
-                        @Html.DisplayFor(modelItem => comment.Created)
-                    </li>
-                    <li>
-                        >@Html.Raw(Server.HtmlDecode(comment.Body))
-                    </li>
+                    <li>@Html.DisplayFor(modelItem => comment.Created)</li>
+                    <li>@Html.Raw(Server.HtmlDecode(comment.Body))</li>
                 </ul>
-            }
 
+                @*@if (Model.MediaUrl != null)
+                {
+
+                    <img class="img-responsive" src="@Model.MediaUrl" alt="">
+                }*@
+            }
+            
         </div>
     </div>
 </div>

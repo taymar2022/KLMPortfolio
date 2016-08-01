@@ -19,10 +19,10 @@ namespace KLMPortfolio.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        public ActionResult MyIndex()
-        {
-            return View(db.Posts.ToList());
-        }
+        //public ActionResult Index()
+        //{
+        //    return View(db.Posts.ToList());
+        //}
 
         public ActionResult BlogDetails(string Slug)
         {
@@ -48,42 +48,34 @@ namespace KLMPortfolio.Controllers
             return View(db.Posts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
         }
 
-        //public ActionResult Index(int? page, string query)
-        //{
-        //    int pageSize = 3;//the number of posts you want to display per page
-        //    int pageNumber = (page ?? 1);
-        //    ViewBag.Query = query;
-        //    var qposts = db.Posts.AsQueryable();
-        //    if (!string.IsNullOrWhiteSpace(query))
+        // POST: BlogPosts
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(int? page, string searchStr)
+        {
+            int pageSize = 3;//the number of posts you want to display per page
+            int pageNumber = (page ?? 1);
+
+            var result = db.Posts.Where(p => p.Body.Contains(searchStr))
+
+        .Union(db.Posts.Where(p => p.Title.Contains(searchStr)))
+        .Union(db.Posts.Where(p => p.Comments.Any(c => c.Body.Contains(searchStr))))
+        .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.DisplayName.Contains(searchStr))))
+        .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.FirstName.Contains(searchStr))))
+        .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.LastName.Contains(searchStr))))
+        .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.UserName.Contains(searchStr))))
+        .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.Email.Contains(searchStr))))
+        .Union(db.Posts.Where(p => p.Comments.Any(c => c.UpdateReason.Contains(searchStr)))); 
 
 
-        //    { qposts = qposts.Where(p => p.Title.Contains(query) || p.Body.Contains(query) || p.Comments.Any(c => c.Body.Contains(query) || c.Author.DisplayName.Contains(query))); }
+           return View(result.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
+            //return View(db.Posts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
+            //}
+        }
 
-        //    var posts = qposts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize);
-        //    //return View(db.Posts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
-        //    //}
-
-        //    return View(posts);
-        //}
-
-
-        // GET: BlogPosts/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    BlogPost blogPost = db.Posts.Find(id);
-        //    if (blogPost == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(blogPost);
-        //}
 
         //GET:BlogPosts/Details/6
-        
+
         public ActionResult Details(string Slug)
         {
             if (String.IsNullOrWhiteSpace(Slug))
@@ -122,8 +114,7 @@ namespace KLMPortfolio.Controllers
                     ModelState.AddModelError("image", "Invalid Format.");
             }
             
-
-
+            
             if (ModelState.IsValid)
             {
                 if (image != null)
@@ -149,15 +140,12 @@ namespace KLMPortfolio.Controllers
                     }
                     blogPost.Slug = Slug;
                 }
-
+                
                 blogPost.Created = DateTime.Now;
                 db.Posts.Add(blogPost);
                 db.SaveChanges();
 
-                
-
-               
-                    //return View(blogPost);
+                //return View(blogPost);
                 }
             return RedirectToAction("Index");
         }
@@ -201,7 +189,7 @@ namespace KLMPortfolio.Controllers
 
         // GET: BlogPosts/Delete/5
 
-        [Authorize(Roles = "Admim")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

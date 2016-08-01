@@ -88,7 +88,7 @@ namespace KLMPortfolio.Controllers
                 return HttpNotFound();
             }
             var bs = db.Posts.Find(comment.PostId).Slug.ToString();
-            return RedirectToAction("BlogDetails", "BlogPosts", routeValues: new { Slug = bs });
+            return RedirectToAction("Details", "BlogPosts", routeValues: new { Slug = bs });
         }
 
         // POST: Comments/Edit/5

@@ -87,13 +87,14 @@
 
     </div>
     <textarea name="editor1" id="editor1" rows="10" cols="80">
-        This is my textarea to be replaced with CKEditor.
+        @*This is my textarea to be replaced with CKEditor.*@
     </textarea>
 
     ...
 
     @section scripts{
+<script src="~/ckeditor.js"></script>
         <script>
-            CKEDITOR.replace('editor1');
+            CKEDITOR.replace('Body');
         </script>
     }
