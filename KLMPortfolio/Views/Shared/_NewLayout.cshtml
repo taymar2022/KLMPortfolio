@@ -67,15 +67,12 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-nav">
                 <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
             </button>
-
-
+            
             <!-- ======= LOGO ========-->
             <a class="navbar-brand scrollto" href="@Url.Action("Index","Home")">
 
                 <p> Karen McKinney </p>
-                <div class="col-md-6 bg-image col-md-1 hidden-sm hidden-xs">
-
-
+                <div class="col-md-6 bg-image col-md-1 hidden-sm hidden-xs">                    
                 </div>
             </a>
 
@@ -171,7 +168,7 @@
                         <li><a href="https://twitter.com/qthemes" target="_blank" class="text-hover-color"><i class="fa fa-skype fa-2x fa-fw"></i></a></li>
                         <li><a href="http://q-themes.net/" target="_blank" class="text-hover-color"><i class="fa fa-google-plus fa-2x fa-fw"></i></a></li>
                         <li><a href="https://twitter.com/qthemes" target="_blank" class="text-hover-color"><i class="fa fa-youtube fa-2x fa-fw"></i></a></li>
-                        <li><a href="http://q-themes.net/" target="_blank" class="text-hover-color"><i class="fa fa-vimeo fa-2x fa-fw"></i></a></li>
+                        <li><a href="https://q-themes.net/" target="_blank" class="text-hover-color"><i class="fa fa-vimeo fa-2x fa-fw"></i></a></li>
                     </ul>*@
                 <ul class="list-inline list-unstyled list-gap-lg text-center mb-0">
                     <li><a href="https://twitter.com/qthemes" target="_blank" class="text-hover-color"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
@@ -179,14 +176,11 @@
                     <li><a href="https://twitter.com/qthemes" target="_blank" class="text-hover-color"><i class="fa fa-pinterest fa-2x fa-fw"></i></a></li>
                     <li><a href="http://q-themes.net/" target="_blank" class="text-hover-color"><i class="fa fa-tumblr fa-2x fa-fw"></i></a></li>
                     <li><a href="https://twitter.com/qthemes" target="_blank" class="text-hover-color"><i class="fa fa-skype fa-2x fa-fw"></i></a></li>
-                    <li><a href="http://q-themes.net/" target="_blank" class="text-hover-color"><i class="fa fa-google-plus fa-2x fa-fw"></i></a></li>
+                    <li><a href="https://q-themes.net/" target="_blank" class="text-hover-color"><i class="fa fa-google-plus fa-2x fa-fw"></i></a></li>
                     <li><a href="https://twitter.com/qthemes" target="_blank" class="text-hover-color"><i class="fa fa-youtube fa-2x fa-fw"></i></a></li>
                     <li><a href="http://q-themes.net/" target="_blank" class="text-hover-color"><i class="fa fa-vimeo fa-2x fa-fw"></i></a></li>
                 </ul>
 
-            </div>
-
-        </div>
 
         <div class="bg-dark">
 
@@ -261,6 +255,12 @@
     <script src="~/resources/js/jquery.waypoints.min.js"></script>
     <script src="~/resources/js/scripts.js"></script>
     @*<script type="text/javascript" src="~/resources/js/libs/modernizr.min.js"></script>*@
+    <script src="~/Scripts/tinymce/tinymce.min.js"></script>
+    <script>
+            tinymce.init({
+                selector: '#mytextarea'
+            });
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 

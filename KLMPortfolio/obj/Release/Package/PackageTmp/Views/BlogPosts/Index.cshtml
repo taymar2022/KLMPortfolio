@@ -2,13 +2,11 @@
 
 @using PagedList;
 @using PagedList.Mvc;
-
-@{
-    Layout = "~/Views/Shared/_BlogLayout.cshtml";
-}
-
-<!-- Page Content -->
 <div class="bg-light pt-160 pb-160">
+    @{
+        Layout = "~/Views/Shared/_BlogLayout.cshtml";
+    }
+    <!-- Page Content -->
     <div class="container">
         <div class="row">
             <!-- Blog Post Content Column -->
@@ -17,145 +15,35 @@
 
             @foreach (var item in Model)
             {
-
                 <div class="col-xs-offset-2">
                     <!-- Blog Post -->
                     <!-- Title -->
-                    <a href="@Url.Action("BlogDetails", "BlogPosts", new { slug = item.Slug })">@Html.DisplayFor(modelItem => item.Title)</a>
-                    <!-- Author -->
-                    @*<p class="lead">
-                            by <a href="#">Start Bootstrap</a>
-                        </p>*@
-
+                    <a style="font-size:2em" href="@Url.Action("BlogDetails", "BlogPosts", new { slug = item.Slug })">@Html.DisplayFor(modelItem => item.Title)</a>
                     <!-- Date/Time -->
-                    <p><span class="glyphicon glyphicon-time"></span> @Html.DisplayFor(modelItem => item.Created)</p>
-
-
+                    <span class="pull-right text-sm"><span class="glyphicon glyphicon-time"></span> @Html.DisplayFor(modelItem => item.Created)</span>
                     <!-- Preview Image -->
                     @if (item.MediaUrl != null)
                     {
-
-                    <img class="img-responsive" src="@item.MediaUrl" alt="">
-                    <hr>
+                        <img class="img-responsive" src="@item.MediaUrl" width="150" alt="">
                     }
-                    @*<img class="img-responsive" src="" alt="">*@
-
+                    <p class="lead">@Html.Raw(Server.HtmlDecode(item.Body))                                                 
+                    </p>
+                    <span style="clear:both"></span>
                     <!-- Post Content -->
-                    <p class="lead">@Html.Raw(Server.HtmlDecode(item.Body))</p><hr>
+                    @*<p class="lead">@Html.Raw(Server.HtmlDecode(item.Body))</p>*@
                     <!-- Blog Comments -->
-
                     <!-- Edit, Delete, Details -->
                     @if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
-                {
-                        <p>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                        </p>
+                    {
+                        <span class="pull-right">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-warning" })
+                        </span>
+                        <br />
                     }
                 </div>
-
-            }        
-
-
-            <!-- Comments Form -->
-            <div class="well">
-                <h4>Leave a Comment:</h4>
-                <form role="form">
-                    <div class="form-group">
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-
-            <!-- Posted Comments -->
-            <!-- Comment -->
-            <div class="media">
-                <a class="pull-left" href="#">
-                    @*<img class="media-object" src="https://placehold.it/64x64" alt="">*@
-                </a>
-                <div class="media-body">
-                    <div class="media-heading">
-                        @*Start Bootstrap*@
-                        @* <small>August 25, 2014 at 9:30 PM</small>*@
-
-                        @* Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.*@
-                    </div>
-                </div>
-            </div>
-            <!-- Comment -->
-            <div class="media">
-                <a class="pull-left" href="#">
-                    @*<img class="media-object" src="https://placehold.it/64x64" alt="">*@
-                </a>
-                  <div class="media-body">
-                    <div class="media-heading">
-               
-
-                                @*Start Bootstrap*@
-                        <small>@*August 25, 2014 at 9:30 PM*@</small>
-                        </>
-                        @*Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.*@
-                        <!-- Nested Comment -->
-                        @*<div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object" src="https://placehold.it/64x64" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading">
-                                        Nested Start Bootstrap
-                                        <small>August 25, 2014 at 9:30 PM</small>
-                                    </h4>
-                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                                </div>
-                            </div>*@
-                        <!-- End Nested Comment -->
-                    </div>
-                </div>
-
-                @* Pager *@
-
-                @*<ul class="pager">
-                        <li class="previous">
-                            <a href="#">&larr; Older</a>
-                        </li>
-                        <li class="next">
-                            <a href="#">Newer &rarr;</a>
-                        </li>
-                    </ul>*@
-
-                <div class="col-md-4">
-
-                    <!-- Blog Search Well -->
-                   
-
-                    @*<!-- Blog Sidebar Widgets Column -->
-                        <div class="col-md-4">
-                            <!-- Blog Search Well -->
-                            <div class="well">
-                                <h4>Blog Search</h4>
-                                <form action="@Url.Action("Index", "BlogPosts")">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" value="@ViewBag.Query">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" type="submit">
-                                                <span class="glyphicon glyphicon-search"></span>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </form>
-                                <!-- /.input-group -->
-                            </div>*@
-                    <!-- Blog Categories Well -->
-                    <!-- /.row -->
-                </div>
-                <!-- Side Widget Well -->
-                <div class="well">
-                    <h4>Side Widget Well</h4>
-                    @* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>*@
-                </div>
-            </div>
-            <div>
+                <hr />
+                }
             </div>
         </div>
         <div>
@@ -163,4 +51,3 @@
             @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
         </div>
     </div>
-</div>

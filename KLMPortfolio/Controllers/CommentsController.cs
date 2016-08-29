@@ -12,7 +12,8 @@ using Microsoft.AspNet.Identity;
 namespace KLMPortfolio.Controllers
 {
     [RequireHttps]
-    public class CommentsController : Controller
+    public class 
+        CommentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -66,7 +67,9 @@ namespace KLMPortfolio.Controllers
                 comment.Created = DateTime.Now;
                 db.Comments.Add(comment);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                var post = db.Posts.FirstOrDefault(p => p.Id == comment.PostId);
+                return RedirectToAction("BlogDetails","BlogPosts", new { slug = post.Slug });
             }
 
             ViewBag.AuthorId = new SelectList(db.Users, "Id", "FirstName", comment.AuthorId);

@@ -5,10 +5,10 @@
 }
 
 @*<h2> </h2>*@
+<div class="bg-light pt-160 pb-160">
+    @using (Html.BeginForm("Create", "BlogPosts", FormMethod.Post, new { enctype = "Multipart/form-data"}))
+    {
 
-@using (Html.BeginForm("Create", "BlogPosts", FormMethod.Post, new { enctype = "Multipart/form-data" }))
-{
-    <div class="bg-light pt-160 pb-160">
         <div class="form-horizontal">
 
 
@@ -31,7 +31,7 @@
                     @Html.ValidationMessageFor(model => model.Updated, "", new { @class = "text-danger" })
                 </div>
             </div>*@
-        
+
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-xs-10">
@@ -51,7 +51,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Body, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-xs-10">
-                    @Html.TextAreaFor(model => model.Body, htmlAttributes: new { rows = "10", cols = "80" })
+                    @Html.TextAreaFor(model => model.Body, htmlAttributes: new { rows = "10", cols = "80", id= "mytextarea" })
                     @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -81,21 +81,9 @@
                 </div>
             </div>
         </div>
-    </div>
-}
-
+    
+    }
+</div>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-<textarea name="editor1" id="editor1" rows="10" cols="80">
-    @*This is my textarea to be replaced with CKEditor.*@
-</textarea>
-
-...
-
-@section scripts{
-    <script src="~/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('Body');
-    </script>
-}

@@ -6,7 +6,7 @@
 
 @Html.BeginForm()
 {
-    @Html.AntiForgeryToken()
+@Html.AntiForgeryToken()
 
 <h2>Delete</h2>
 <div class="bg-light pt-160 pb-160">
@@ -32,12 +32,12 @@
 
             <dt>@Html.DisplayNameFor(model => model.UpdateReason)</dt>
             <dd>@Html.DisplayFor(model => model.UpdateReason)</dd>
-       </dl>
+        </dl>
 
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
-            </div>
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
     </div>
-    
+
 </div>

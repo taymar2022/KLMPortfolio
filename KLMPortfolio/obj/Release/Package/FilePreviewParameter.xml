@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="KMcKinneyPortfolio" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="KLMcKinneyPortfolio" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Karen\\Documents\\Visual\ Studio\ 2015\\Projects\\KLMPortfolio\\KLMPortfolio\\obj\\Release\\Package\\PackageTmp$" />
     <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Karen\\Documents\\Visual\ Studio\ 2015\\Projects\\KLMPortfolio\\KLMPortfolio\\obj\\Release\\Package\\PackageTmp$" />
   </parameter>

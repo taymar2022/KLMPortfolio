@@ -16,7 +16,7 @@ namespace KLMPortfolio
             routes.MapRoute(
                 name: "NewSlug",
                 url: "Blog/{slug}",
-                defaults: new { controller = "BlogPosts", action = "Details", slug = UrlParameter.Optional }
+                defaults: new { controller = "BlogPosts", action = "BlogDetails", slug = UrlParameter.Optional }
                 );
 
             routes.MapRoute(

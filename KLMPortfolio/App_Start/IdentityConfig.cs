@@ -1,34 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
+using System.Configuration;
+using SendGrid;
+using System.Net.Mail;
 using KLMPortfolio.Models;
 
 namespace KLMPortfolio
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        public async Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
-            return Task.FromResult(0);
-        }
-    }
+            var apiKey = ConfigurationManager.AppSettings["SendGridAPIKey"];
+            var from = ConfigurationManager.AppSettings["ContactEmail"];
+            SendGridMessage myMessage = new SendGridMessage();
+            myMessage.AddTo(from);
+            myMessage.From = new MailAddress(from);
+            myMessage.Subject = message.Subject;
+            myMessage.Html = message.Body;
 
-    public class SmsService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Plug in your SMS service here to send a text message.
-            return Task.FromResult(0);
+            //create a web transport for sending email
+            var transportWeb = new Web(apiKey);
+
+            //Send the email.
+
+            try
+            {
+                await transportWeb.DeliverAsync(myMessage);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                await Task.FromResult(0);
+            }
         }
     }
 
@@ -77,7 +88,6 @@ namespace KLMPortfolio
                 BodyFormat = "Your security code is {0}"
             });
             manager.EmailService = new EmailService();
-            manager.SmsService = new SmsService();
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
@@ -86,6 +96,11 @@ namespace KLMPortfolio
             }
             return manager;
         }
+
+        //internal Task FindByNameAsync(object email)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 
     // Configure the application sign-in manager which is used in this application.

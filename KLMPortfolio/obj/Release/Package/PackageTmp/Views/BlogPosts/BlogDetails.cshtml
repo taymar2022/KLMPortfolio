@@ -4,65 +4,82 @@
 <div class="bg-light pt-160 pb-160">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-8">
+            <div class="col-xs-12">
                 <div>
+
+                    @*
                     <ul class="DetailsContent">
                         <li>@Html.DisplayFor(model => model.Title)</li>
                         <li>@Html.DisplayFor(model => model.Created)</li>
                         <li>@Html.Raw(Server.HtmlDecode(Model.Body))</li>
                         <li>@Html.DisplayFor(model => model.MediaUrl)</li>
                     </ul>
+                    *@
+                    <h3 style="font-size:2em">@Html.DisplayFor(model => model.Title)</h3>
+                    <span class="pull-right text-sm">@Html.DisplayFor(model => model.Created)</span>
+                    <div class="content-box">@Html.Raw(Server.HtmlDecode(Model.Body))</div>
+                    <!-- Preview Image -->
+                    @if (Model.MediaUrl != null)
+                    {
+                        <img class="img-responsive" src="@Model.MediaUrl" alt="">
+                    }
                 </div>
                 @if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
                 {
-              <p>
-                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
-             </p>
+                    <span class="pull-right">
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class="btn btn-success"}) 
+                        @Html.ActionLink("Details", "Details", new { id = Model.Id }, new { @class = "btn btn-secondary" }) 
+                        @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-warning" })
+                    </span>
                 }
             </div>
-            <div>
-                @Html.ActionLink("Back to List", "Index")
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-arrow-left"></span> @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-link" }) 
+            </button>
+            
             </div>
-            
-            @using (Html.BeginForm("Create", "Comments", FormMethod.Post))
+            <div class="row">
+
+                @foreach (var comment in Model.Comments)
             {
-                @Html.AntiForgeryToken()
-                <input type="hidden" name="PostId" value="@Model.Id" />
-                <input type="hidden" name="AuthorId" value="@User.Identity.GetUserId()" />
-                <textarea class="form-control" name="Body" id="Body">
-                    @*This is my textarea to be replaced with CKEditor.*@
-                </textarea>
-                <div class="form-group"> 
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-default" />
+                    @*
+                    <ul class="Content">
+                        <li>@Html.DisplayFor(modelItem => comment.Created)</li>
+                        <li>@Html.Raw(Server.HtmlDecode(comment.Body))</li>
+                    </ul>
+                    *@
+                    
+                    <span class="pull-right">@Html.DisplayFor(modelItem => comment.Created)</span>
+                    <div class="content-box">@Html.Raw(Server.HtmlDecode(comment.Body))</div>
+                          @*@if (Model.MediaUrl != null)
+                            {
+
+                                <img class="img-responsive" src="@Model.MediaUrl" alt="">
+                            }*@
+                          }
                     </div>
-                 </div>
-            }
-
-            @foreach (var comment in Model.Comments)
+        @if (User.IsInRole("Admin")) { 
+            <div class="row">
+                @using (Html.BeginForm("Create", "Comments", FormMethod.Post))
             {
-                <ul class="Content">
-                    <li>@Html.DisplayFor(modelItem => comment.Created)</li>
-                    <li>@Html.Raw(Server.HtmlDecode(comment.Body))</li>
-                </ul>
+                    @Html.AntiForgeryToken()
+                    <div class="col-xs-8 col-xs-offset-2">
+                        <input type="hidden" name="PostId" value="@Model.Id" />
+                        <input type="hidden" name="AuthorId" value="@User.Identity.GetUserId()" />
+                                                
+                            <textarea class="form-control" name="Body" id="mytextarea"></textarea>
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Leave a Comment" class="btn btn-default" />
+                            </div>
+                        
 
-                @*@if (Model.MediaUrl != null)
-                {
+                    </div>
+                }
+            </div>
 
-                    <img class="img-responsive" src="@Model.MediaUrl" alt="">
-                }*@
-            }
-            
+        }
         </div>
+        
     </div>
-</div>
-            
 
-@section scripts{
-    <script src="~/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('Body');
-    </script>
-}
+

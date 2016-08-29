@@ -41,7 +41,9 @@ LAYOUT STYLES NEW
     width:1400px; 
   }
 }
-
+ul{
+    list-style-type:none;
+}
 body{
   overflow-x: hidden;
 }
@@ -250,6 +252,12 @@ body{
   margin-left: auto;
   margin-right: auto;
 }
+
+.img-responsive picClass{
+    height: 300px;
+    width: 250px;
+}
+
 
 .list-inline li{
   margin-bottom: 20px;
@@ -2423,6 +2431,8 @@ figcaption{
 .img-hover-opacity:hover{
   opacity: 1;
 }
+
+
 
 /*-----------------------------
 FOOTER STYLES

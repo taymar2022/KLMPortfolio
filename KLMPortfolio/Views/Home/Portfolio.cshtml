@@ -1,321 +1,348 @@
-﻿<div id="portfolio" class="bg-dark pt-120">
-    <div class="container">
-        <div class="scrolling-animation fade-up">
-            <h2 class="text-lg text-center">My <span class="text-color">Portfolio</span></h2>
-            <hr class="hr-gray hr-center hr-sm hr-bold mb-20">
-            @*<p class="text-gray text-center mb-80">My Projects</p>*@
-        </div>
-
-        <a href="" data-toggle="modal" data-target="#jsexercises">Javascript Exercises</a>
-        <div id="jsexercises" class="modal fade">
-            <span class="close-modal" data-dismiss="modal">&times;</span>
-            <div class="modal-dialog">
-                <div class="modal-content text-center">
-                    <div id="jsexercises">
-                        <div class="text-center">
-                            <a class="btn btn-rect btn-xl btn-block" data-toggle="collapse">
-                                <img src="~/resources/images/javascriptand jquery.jpg" />
-                            </a>
-                            <h2>JavaScript Exercises</h2>
-                        </div>
-                    </div>
-                </div>
-                <a href="#jsexercises" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Javascript Exercises<i class="fa fa-arrow-down fa-lg"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-@*palindrome*@
-@*Five numbers*@
-@*Five numbers*@
-@*Factorial*@
-@*Factorial*@
-@*Fizz Buzz*@
-@*Fizz Buzz*@
-
-<div class="container">
-    <div class="row">
-        <div class="text-center">
-            <a class="btn btn-rect btn-xl btn-block" data-toggle="modal" data-target="#palCode">
-                <img src="~/resources/images/palindromeimg.jpg" />
-                <h5>Palindrome - View code</h5>
-            </a>
-            <a href="" data-toggle="modal" data-target="#palCode"></a>
-            <div id="palCode" class="modal fade">
-                <span class="close-modal" data-dismiss="modal">&times;</span>
-                <div class="modal-dialog">
-                    <div class="modal-content text-center">
-                        $('#palBtn').click(function () {
-                        var word = $("#palInput").val();
-                        var reverse = word.split("").reverse().join("");
-                        if (word == reverse)
-                        $("#palResult").html("Yes");
-                        else
-                        $("#palResult").html("No");
-                        });
-                        <a href="#palCode" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Palindrome - View Code<i class="fa fa-arrow-down fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-xs-12">
-            Word: <input type="text" id="palInput" required>
-            <button id="palBtn">Calculate</button>
-            <span id="palResultOutput"></span>
-        </div>
-    </div>
-</div>
-<br />
-<div>
-    <a class="btn btn-rect btn-xl btn-block" href="" data-toggle="modal" data-target="#numberCode">
-        <img src="~/resources/images/mathjs.png" />
-        <h5>5 Numbers - View Code</h5>
-    </a>
-
-    <a href="" data-toggle="modal" data-target="#numberCode"></a>
-    <div id="numberCode" class="modal fade">
-        <span class="close-modal" data-dismiss="modal">&times;</span>
-        <div class="modal-dialog">
-            <div class="modal-content text-center">
-                $('#numBtn').click(function(){
-                var a = parseInt($('input[name=num1]').val());
-                var b = parseInt($('input[name=num2]').val());
-                var c = parseInt($('input[name=num3]').val());
-                var d = parseInt($('input[name=num4]').val());
-                var e = parseInt($('input[name=num5]').val());
-
-                if (a > b && a > c && a > d && a > e) {
-                $('#result').text(a + " is the greatest number");
-                }
-                else if (b > a & b > c && b > d && b > e) {
-                $('#result').text(b + " is the greatest number");
-                }
-                else if  (c > a && c > b && c > d && c > e) {
-                $('#result').text(c + " is the greatest number");
-                }
-                else if (d > a && d > b && d > c && d > e) {
-                $ ('#result').text(d + " is the greatest number");
-                }
-                else if (e > a && e > b && e > c && e > d) {
-                $('#result').text(e + " is the greatest number");
-                }
-
-                if (a < b && a < c && a < d && a < e) {
-                $('#result').text(a + " is the least number");
-                }
-                else if (b < a & b < c && b < d && b < e) {
-                $('#result').text(b + " is the least number");
-                }
-                else if  (c < a && c < b && c < d && c < e) {
-                $('#result').text(c + " is the least number");
-                }
-                else if (d < a && d < b && d < c && d < e) {
-                $ ('#result').text(d + " is the least number");
-                }
-                else if (e < a && e < b && e < c && e < d) {
-                $('#result').text(e + " is the least number");
-                }
-
-                var prod = a*b*c*d*e;
-                $('#result').append(prod + " is the product");
-
-                var sum = a+b+c+d+e;
-                $('#result').append(sum + " is the sum");
-
-                var mean =(sum/5);
-                $('#result').append(mean + " is the mean");
-
-                });
-                <a href="" data-toggle="modal" data-target="#numberCode"><i class="fa fa-arrow-down fa-lg"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row line visible-md visible-lg">
-        <div class="col-md-3"><span class="spot"></span></div>
-        <div class="col-md-3"><span class="spot"></span></div>
-        <div class="col-md-3"><span class="spot"></span></div>
-        <div class="col-md-3"><span class="spot"></span></div>
-    </div>
-
-    <a href="" data-toggle="modal" data-target="#factCode"></a>
-    <div id="factCode" class="modal fade">
-        <span class="close-modal" data-dismiss="modal">&times;</span>
-        <div class="modal-dialog">
-            <div class="modal-content text-center">
-                $('#factBtn').click(function()
-                function factorial()
-                {
-                var num = $('input[name=num1]').val();
-                var prod = 1;
-                for (var i=1; i<=num;i++)
-                {
-                prod = prod * i;
-                }
-                $('#result2').text(prod + " is the factorial");
-                });
-                <a href="#calcBtn" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Factorial - View Code<i class="fa fa-arrow-down fa-lg"></i></a>
-            </div>
-        </div>
-    </div>
-    <h2> Greatest, least, product, sum, and mean of 5 numbers! </h2>
-
-    First number:  <input type="number" name="num1"><br>
-    Second number: <input type="number" name="num2"><br>
-    Third number:  <input type="number" name="num3"><br>
-    Fourth number: <input type="number" name="num4"><br>
-    Fifth number:  <input type="number" name="num5"><br>
-
-    <button id="numBtn">Calculate</button>
-    <div id="result"></div>
-    <div id="result1"></div>
-    <div id="result2"></div>
-    <div id="result3"></div>
-    <div id="result4"></div>
-</div>
-<br />
-<div class="modal fade" id="max" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <pre class="brush: js text"></pre>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div>
-    <a class="btn btn-rect btn-xl btn-block" href="" data-toggle="modal" data-target="#factCode">
-        <img src="~/resources/images/factorialimg.png" />
-        <h5>Factorial - View Code</h5>
-    </a>
-</div>
-
-<div class="container">
-    Number:  <input type="number" name="fact1">
-    <button id="factBtn">Calculate</button>
-    <div id="factResult"></div>
-</div>
-<br />
-<div class="container">
-    <div class="modal fade" id="max" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <pre class="brush: js text">
-                    $'(#fbBtn').click(function()
-                    function factorial()
-                    {
-                        var num = $('input[name=num1]').val();
-                        var prod = 1;
-                        for (var i=1; i<=num;i++)
-                    {
-                        prod = prod * i;
-                    }
-                        $('#result2').text(prod + " is the factorial");
-                });
-                   </pre>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <a class="btn btn-rect btn-xl btn-block" href="" data-toggle="modal" data-target="#fbCode">
-            <script src="~/resources/js/fizzbuzz.js"></script>
-            <img src="~/resources/images/fizzbuzzimg.png" />
-            <h5>Fizz Buzz - click to see code</h5>
-        </a>
-
-        <a href="" data-toggle="modal" data-target="#fbCode">Fizz Buzz - View Code</a>
-        <div id="fbCode" class="modal fade">
-            <span class="close-modal" data-dismiss="modal">&times;</span>
-            <div class="modal-dialog">
-                <div class="modal-content text-center">
-                    $('#fbBtn').click(function()
-                    function fizzbuzz()
-                    for (var i=1;i<=100;i++)
-                    var a = $('input[name=num1]').val();
-                    var b = $('input[name=num2]').val();
-                    {
-                    if((a%b)===0 && (b%a)===0)
-                    {
-                    $('#fbResult').text("FizzBuzz");
-                    }
-                    else if((a%b)===0)
-                    {
-                    $('#fbResult').text("Fizz");
-                    }
-                    else if((b%a)===0)
-                    {
-                    $('#fbResult').text("Buzz");
-                    }
-                    else
-                    {
-                    $('#fbResult').text}(i);
-                    }
-                    })
-                    <a href="#fbCode" class="btn mt-40 btn-border btn-i-right scrollto" data-dismiss="modal">Fizz Buzz - View Code<i class="fa fa-arrow-down fa-lg"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-        <a href="" data-toggle="modal" data-target="js/fizzbuzz.js"></a>
-        First number:  <input type="number" name="fb1"><br>
-        Second number: <input type="number" name="fb2"><br>
-
-        <button id="fbBtn">Calculate</button>
-        <span id="fbResult1"></span>
-</div>
-<br />
-<div class="modal fade" id="max" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <pre class="brush: js text;">
-                    $('#fbBtn').click(function()
-                    function fizzbuzz()
-                        for (var i=1;i<=100;i++)
-                        var a = $('input[name=num1]').val();
-                        var b = $('input[name=num2]').val();
-                    {
-                            if((a%b)===0 && (b%a)===0)
-                        {
-                                $('#fbResult').text("FizzBuzz");
-                        }
-                            else if((a%b)===0)
-                        {
-                                $('#fbResult').text("Fizz");
-                        }
-                            else if((b%a)===0)
-                        {
-                                $('#fbResult').text("Buzz");
-                        }
-                            else
-                        {
-                                $('#fbResult').text}(i);
-                        }
-                    })
-               </pre>
-            </div>
-        </div>
-    </div>
-</div>
-@section scripts{
-    <script src="~/resources/shCore.js"></script>
-    <script src="~/resources/shBrushJScript.js"></script>
-    <script src="~/resources/js/minnumber.js"></script>
-    <script src="~/resources/js/factorial.js"></script>
-    <script src="~/resources/js/fizzbuzz.js"></script>
-    <script src="~/resources/js/palindrome.js"></script>
+﻿
+@*@{
+    ViewBag.Title = "Portfolio";
 }
 
+<h2>Portfolio</h2>*@
 
+<div id="portfolio" class="bg-light pt-120">
 
+    <div class="container">
 
+        @*<div class="scrolling-animation fade-up">
+            <h2 class="text-lg text-center">Impressive <span class="text-color">Portfolio</span></h2>
+            <hr class="hr-gray hr-center hr-sm hr-bold mb-20">
+            <p class="text-gray text-center mb-80">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vestibulum vehicula condimentum.</p>
+        </div>*@
+
+        @*<div class="row">
+
+            <div class="col-md-10 col-md-offset-1 scrolling-animation scale-in">
+
+                <div class="macbook-mockup single-device">
+
+                    <img class="img-responsive img-center" src="assets/images/macbook-single.png" alt="" />
+
+                    <div class="macbook-mockup-content flexslider controls-lg no-bullet-nav effect-zoom" data-speed="4000">
+
+                        <ul class="slides">
+
+                            <li class="hover-mask-parent">
+                                <figure class="hover-mask-parent">
+
+                                    <img class="img-responsive" src="assets/images/macbook-screen-1.jpg" alt="" />
+
+                                    <figcaption class="hover-mask hover-mask-zoom-in">
+
+                                        <div class="hover-mask-content text-center">
+
+                                            <h3 class="mb-40 text-bold">Wonderfull Design</h3>
+                                            <a href="project-all-devices-scrolling.html" class="btn btn-3d btn-color btn-solid">Case Study</a>
+
+                                        </div>*@
+
+                                    @*</figcaption>
+
+                                </figure>
+                            </li>*@
+
+                            @*<li class="hover-mask-parent">
+                                <figure class="hover-mask-parent">
+
+                                    <img class="img-responsive" src="assets/images/macbook-screen-2.jpg" alt="" />
+
+                                    <figcaption class="hover-mask hover-mask-zoom-in">
+
+                                        <div class="hover-mask-content text-center">
+
+                                            <h3 class="mb-40 text-bold">Fully Responsive</h3>
+                                            <a href="project-all-devices-sliders.html" class="btn btn-3d btn-color btn-solid">Case Study</a>
+
+                                        </div>
+
+                                    </figcaption>
+
+                                </figure>
+                            </li>*@
+
+                            @*<li class="hover-mask-parent">
+                                <figure class="hover-mask-parent">
+
+                                    <img class="img-responsive" src="assets/images/macbook-screen-3.jpg" alt="" />
+
+                                    <figcaption class="hover-mask hover-mask-zoom-in">
+
+                                        <div class="hover-mask-content text-center">
+
+                                            <h3 class="mb-40 text-bold">Creative Portfolio</h3>
+                                            <a href="project-synchronized-all.html" class="btn btn-3d btn-color btn-solid">Case Study</a>
+
+                                        </div>
+
+                                    </figcaption>
+
+                                </figure>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>*@
+<!-- ==============================================
+    BLOCK BUTTON
+    =============================================== -->
+<div class="text-center">
+    <a class="btn btn-rect btn-xl btn-block" href="https://wrapbootstrap.com/theme/perfectr-impressive-portfolio-WB0H4T00K" target="_blank">
+        Welcome to my projects<br>
+        <span class="btn-subtext">Check them out!</span>
+    </a>
+</div>
+
+<div class="bg-light pt-40">
+
+    <div class="container">
+
+        <div class="filter-buttons text-center mt-60 mb-40" data-target="#grid-1">
+
+            <ul class="list-unstyled list-inline">
+                <li class="active filter-button scrolling-animation fade-right d3" data-filter="*">All Projects</li>
+                <li class="filter-button scrolling-animation fade-right d2" data-filter=".cat-1">JavaScript</li>
+                <li class="filter-button scrolling-animation fade-right d1" data-filter=".cat-2">Bug Tracker</li>
+                <li class="filter-button scrolling-animation fade-right" data-filter=".cat-3">My Logos</li>
+            </ul>
+
+        </div>
+
+        <div id="grid-1" class="grid grid-gap-sm grid-3-cols fade-in">
+
+            <div class="grid-item cat-1">
+
+                <a href="@Url.Action("JavaScriptExercises","Home")">
+
+                    <figure class="hover-mask-parent img-hover-zoom">
+
+                        <img  class="img-responsive picClass" src="~/resources/images/javascriptand jquery.jpg" alt="" />
+
+                        <figcaption class="hover-mask hover-mask-color hover-mask-zoom-out">
+
+                            <div class="hover-mask-content text-center">
+
+                                <h3 class="mb-10 text-bold">JavaScript Exercises</h3>
+                                @*<p class="">#logos #apps</p>*@
+
+                            </div>
+
+                        </figcaption>
+
+                    </figure>
+
+                </a>
+
+            </div>
+            <div class="grid-item cat-2">
+
+                <a href="project-all-devices-sliders.html">
+
+                    <figure class="hover-mask-parent img-hover-zoom">
+
+                        <img class="img-responsive picClass" src="~/resources/images/bug-tracking.png" alt="" />
+
+                        <figcaption class="hover-mask hover-mask-color hover-mask-zoom-out">
+
+                            <div class="hover-mask-content text-center">
+
+                                <h3 class="mb-10 text-bold">Bug Tracker</h3>
+                                @*<p class="">#web #design</p>*@
+
+                            </div>
+
+                        </figcaption>
+
+                    </figure>
+
+                </a>
+
+            </div>
+            <div class="grid-item cat-1">
+
+                <a href="project-all-devices-scrolling.html">
+
+                    <figure class="hover-mask-parent img-hover-zoom">
+
+                        <img class="img-responsive" src="~/resources/images/thumb-3.jpg" alt="" />
+
+                        <figcaption class="hover-mask hover-mask-color hover-mask-zoom-out">
+
+                            <div class="hover-mask-content text-center">
+
+                                <h3 class="mb-10 text-bold">User Experience</h3>
+                                <p class="">#web #apps</p>
+
+                            </div>
+
+                        </figcaption>
+
+                    </figure>
+
+                </a>
+
+            </div>
+            <div class="grid-item cat-2">
+
+                <a href="project-synchronized-macbook-iphone.html">
+
+                    <figure class="hover-mask-parent img-hover-zoom">
+
+                        <img class="img-responsive" src="assets/images/thumb-4.jpg" alt="" />
+
+                        <figcaption class="hover-mask hover-mask-color hover-mask-zoom-out">
+
+                            <div class="hover-mask-content text-center">
+
+                                <h3 class="mb-10 text-bold">100% Responsive</h3>
+                                <p class="">#web #apps</p>
+
+                            </div>
+
+                        </figcaption>
+
+                    </figure>
+
+                </a>
+
+            </div>
+            <div class="grid-item cat-1">
+
+                <a href="project-macbook-iphone-sliders.html">
+
+                    <figure class="hover-mask-parent img-hover-zoom">
+
+                        <img class="img-responsive" src="assets/images/thumb-5.jpg" alt="" />
+
+                        <figcaption class="hover-mask hover-mask-color hover-mask-zoom-out">
+
+                            <div class="hover-mask-content text-center">
+
+                                <h3 class="mb-10 text-bold">Great Design</h3>
+                                <p class="">#web #design</p>
+
+                            </div>
+
+                        </figcaption>
+
+                    </figure>
+
+                </a>
+
+            </div>
+            <div class="grid-item cat-2">
+
+                <a href="project-all-devices-scrolling.html">
+
+                    <figure class="hover-mask-parent img-hover-zoom">
+
+                        <img class="img-responsive" src="assets/images/thumb-6.jpg" alt="" />
+
+                        <figcaption class="hover-mask hover-mask-color hover-mask-zoom-out">
+
+                            <div class="hover-mask-content text-center">
+
+                                <h3 class="mb-10 text-bold">Creative Design</h3>
+                                <p class="">#web #logos</p>
+
+                            </div>
+
+                        </figcaption>
+
+                    </figure>
+
+                </a>
+
+            </div>
+            <div class="grid-item cat-3">
+
+                <a href="project-all-devices-sliders.html">
+
+                    <figure class="hover-mask-parent img-hover-zoom">
+
+                        <img class="img-responsive" src="assets/images/thumb-7.jpg" alt="" />
+
+                        <figcaption class="hover-mask hover-mask-color hover-mask-zoom-out">
+
+                            <div class="hover-mask-content text-center">
+
+                                <h3 class="mb-10 text-bold">UI/UX</h3>
+                                <p class="">#design #apps</p>
+
+                            </div>
+
+                        </figcaption>
+
+                    </figure>
+
+                </a>
+
+            </div>
+            <div class="grid-item cat-3">
+
+                <a href="project-synchronized-all.html">
+
+                    <figure class="hover-mask-parent img-hover-zoom">
+
+                        <img class="img-responsive" src="assets/images/thumb-8.jpg" alt="" />
+
+                        <figcaption class="hover-mask hover-mask-color hover-mask-zoom-out">
+
+                            <div class="hover-mask-content text-center">
+
+                                <h3 class="mb-10 text-bold">Great Design</h3>
+                                <p class="">#web #design</p>
+
+                            </div>
+
+                        </figcaption>
+
+                    </figure>
+
+                </a>
+
+            </div>
+            <div class="grid-item cat-3">
+
+                <a href="project-desktop-scrolling.html">
+
+                    <figure class="hover-mask-parent img-hover-zoom">
+
+                        <img class="img-responsive" src="assets/images/thumb-9.jpg" alt="" />
+
+                        <figcaption class="hover-mask hover-mask-color hover-mask-zoom-out">
+
+                            <div class="hover-mask-content text-center">
+
+                                <h3 class="mb-10 text-bold">Creative Portfolio</h3>
+                                <p class="">#web #apps</p>
+
+                            </div>
+
+                        </figcaption>
+
+                    </figure>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

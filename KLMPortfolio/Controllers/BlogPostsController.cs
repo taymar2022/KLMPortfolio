@@ -11,6 +11,9 @@ using System.IO;
 using PagedList;
 using PagedList.Mvc;
 using BlogPosts.Models;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
+using BlogPosts;
 
 namespace KLMPortfolio.Controllers
 {
@@ -36,11 +39,11 @@ namespace KLMPortfolio.Controllers
                 return HttpNotFound();
             }
             return View(blogPost);
-            
+
         }
 
         // GET: BlogPosts
-       
+
         public ActionResult Index(int? page)
         {
             int pageSize = 3;//the number of posts you want to display per page
@@ -65,10 +68,10 @@ namespace KLMPortfolio.Controllers
         .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.LastName.Contains(searchStr))))
         .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.UserName.Contains(searchStr))))
         .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.Email.Contains(searchStr))))
-        .Union(db.Posts.Where(p => p.Comments.Any(c => c.UpdateReason.Contains(searchStr)))); 
+        .Union(db.Posts.Where(p => p.Comments.Any(c => c.UpdateReason.Contains(searchStr))));
 
 
-           return View(result.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
+            return View(result.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
             //return View(db.Posts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
             //}
         }
@@ -92,7 +95,7 @@ namespace KLMPortfolio.Controllers
 
         // GET: BlogPosts/Create
         [Authorize(Roles = "Admin")]
-       
+
         public ActionResult Create()
         {
             return View();
@@ -102,7 +105,7 @@ namespace KLMPortfolio.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-       
+
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaUrl,Published")] BlogPost blogPost, HttpPostedFileBase image)
         {
@@ -113,8 +116,8 @@ namespace KLMPortfolio.Controllers
                 if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".gif" && ext != ".bmp")
                     ModelState.AddModelError("image", "Invalid Format.");
             }
-            
-            
+
+
             if (ModelState.IsValid)
             {
                 if (image != null)
@@ -140,13 +143,13 @@ namespace KLMPortfolio.Controllers
                     }
                     blogPost.Slug = Slug;
                 }
-                
+
                 blogPost.Created = DateTime.Now;
                 db.Posts.Add(blogPost);
                 db.SaveChanges();
 
                 //return View(blogPost);
-                }
+            }
             return RedirectToAction("Index");
         }
 
@@ -154,7 +157,7 @@ namespace KLMPortfolio.Controllers
 
         // GET: BlogPosts/Edit/5
         [Authorize(Roles = "Admin")]
-       
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -184,7 +187,7 @@ namespace KLMPortfolio.Controllers
                 return RedirectToAction("Index");
             }
             return View(blogPost);
-           
+
         }
 
         // GET: BlogPosts/Delete/5
@@ -206,7 +209,7 @@ namespace KLMPortfolio.Controllers
 
         // POST: BlogPosts/Delete/5
         [HttpPost, ActionName("Delete")]
-       
+
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
@@ -226,3 +229,5 @@ namespace KLMPortfolio.Controllers
         }
     }
 }
+    
+   

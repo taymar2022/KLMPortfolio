@@ -41,7 +41,9 @@ LAYOUT STYLES NEW
     width:1400px; 
   }
 }
-
+ul{
+    list-style-type:none;
+}
 body{
   overflow-x: hidden;
 }
