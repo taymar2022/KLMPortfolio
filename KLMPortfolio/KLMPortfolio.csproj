@@ -1137,6 +1137,12 @@
     <Content Include="Scripts\tinymce\themes\modern\theme.min.js" />
     <Content Include="Scripts\tinymce\tinymce.js" />
     <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Uploads\10418261_10203611823754767_8688183880548334430_n.jpg" />
+    <Content Include="Uploads\2000px-MVC-Process.svg.png" />
+    <Content Include="Uploads\3d-modern-office-room-13697709.jpg" />
+    <Content Include="Uploads\blog.jpg" />
+    <Content Include="Uploads\download.jpg" />
+    <Content Include="Uploads\fb_icon_1024x1024.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1214,7 +1220,6 @@
     <Folder Include="resources\startbootstrap-blog-home-1.0.4\" />
     <Folder Include="samples\" />
     <Folder Include="skins\" />
-    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
